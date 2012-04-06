@@ -16,6 +16,14 @@ module Locomotive
           self.collection.last
         end
 
+        def sample(n=1)
+          if n == 1
+            self.collection.sample
+          else
+            self.collection.sample(n)
+          end
+        end
+
         def each(&block)
           self.collection.each(&block)
         end
