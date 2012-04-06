@@ -76,6 +76,9 @@ module Locomotive
             options[:syntax] = :scss if options[:syntax].blank?
             options[:load_paths] = [] if options[:load_paths].blank?
             options[:load_paths] += ['.',File.dirname(current_path),File.expand_path(model.source.store_dir,Rails.public_path)]
+
+            options[:load_paths] += Compass.configuration.sass_load_paths
+            
             compiled = Sass::Engine.for_file( model.source.path, options ).render
           elsif model.javascript?
             options = Locomotive.config.coffeescript_process_options || {}
