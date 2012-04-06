@@ -28,7 +28,7 @@ module Locomotive
             end
           else
             @context[:parent_page] = @context[:cached_pages].try(:[], @template_name) ||
-              @context[:site].pages.where(:fullpath => @template_name).first
+              @context[:site].pages.where(:handle => @template_name).first
           end
 
           raise PageNotFound.new("Page with fullpath '#{@template_name}' was not found") if @context[:parent_page].nil?
