@@ -34,7 +34,7 @@ module Locomotive
                 next
               else
                 if _page.templatized?
-                  %r(^#{_page.fullpath.gsub('content_type_template', '([^\/]+)')}$) =~ path
+                  %r(^#{_page.fullpath.gsub('content-type-template', '([^\/]+)')}$) =~ path
 
                   permalink = $1
 
@@ -74,8 +74,8 @@ module Locomotive
 
             segment = segments.shift
 
-            (can_include_template ? [segment, 'content_type_template'] : [segment]).map do |_segment|
-              if (_combinations = _path_combinations(segments.clone, can_include_template && _segment != 'content_type_template'))
+            (can_include_template ? [segment, 'content-type-template'] : [segment]).map do |_segment|
+              if (_combinations = _path_combinations(segments.clone, can_include_template && _segment != 'content-type-template'))
                 [*_combinations].map do |_combination|
                   File.join(_segment, _combination)
                 end

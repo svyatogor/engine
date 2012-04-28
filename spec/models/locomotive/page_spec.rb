@@ -208,15 +208,15 @@ describe Locomotive::Page do
     context '#path combinations' do
 
       it 'generates them for a path depth equals to 1' do
-        Locomotive::Page.path_combinations('foo').should == ['foo', 'content_type_template']
+        Locomotive::Page.path_combinations('foo').should == ['foo', 'content-type-template']
       end
 
       it 'generates them for a path depth equals to 2' do
-        Locomotive::Page.path_combinations('foo/bar').should == ['foo/bar', 'foo/content_type_template', 'content_type_template/bar']
+        Locomotive::Page.path_combinations('foo/bar').should == ['foo/bar', 'foo/content-type-template', 'content-type-template/bar']
       end
 
       it 'generates them for a path depth equals to 3' do
-        Locomotive::Page.path_combinations('foo/bar/baz').should == ['foo/bar/baz', 'foo/bar/content_type_template', 'foo/content_type_template/baz', 'content_type_template/bar/baz']
+        Locomotive::Page.path_combinations('foo/bar/baz').should == ['foo/bar/baz', 'foo/bar/content-type-template', 'foo/content-type-template/baz', 'content-type-template/bar/baz']
       end
 
     end
@@ -235,7 +235,7 @@ describe Locomotive::Page do
 
     it 'fills in the slug field' do
       @page.valid?
-      @page.slug.should == 'content_type_template'
+      @page.slug.should == 'content-type-template'
     end
 
     it 'returns the target klass' do

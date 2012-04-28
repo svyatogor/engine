@@ -90,7 +90,7 @@ module Locomotive
         end
 
         def set_slug_if_templatized
-          self.slug = 'content_type_template' if self.templatized? && !self.templatized_from_parent?
+          self.slug = 'content-type-template' if self.templatized? && !self.templatized_from_parent?
         end
 
         # Makes sure the target_klass is owned by the site OR

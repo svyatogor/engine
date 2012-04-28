@@ -45,7 +45,7 @@ module Locomotive
               fullpath = @site.localized_page_fullpath(@page, locale)
 
               if @page.templatized?
-                fullpath.gsub!('content_type_template', context['entry']._permalink)
+                fullpath.gsub!('content-type-template', context['entry']._permalink)
               end
 
               %(<a href="/#{fullpath}" class="#{locale} #{'current' if locale == context['current_locale']}">#{link_label(locale)}</a>)
